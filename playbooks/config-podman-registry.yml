@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+    - import_role:
+        name: podman_registry
+      vars:
+        run_as_root: true
+        pip_cmd: /usr/bin/pip3
+        air_gapped: false

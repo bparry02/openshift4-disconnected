@@ -96,14 +96,3 @@
     (ansible_distribution == "Fedora")
   tags:
     - certificate
-
-- name: update local trusted ca
-  become: true
-  delegate_to: localhost
-  command: update-ca-trust extract
-  when:
-    (ansible_distribution == "RedHat") or
-    (ansible_distribution == "CentOS") or
-    (ansible_distribution == "Fedora")
-  tags:
-    - certificate
